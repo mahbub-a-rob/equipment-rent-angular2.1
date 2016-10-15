@@ -10,3 +10,8 @@ input[type='button'] {
   display: block;
   margin: auto;
 }
+
+.normalInput{
+  display: block;
+  margin: 10px auto;
+}

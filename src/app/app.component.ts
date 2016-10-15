@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import '../../public/css/styles.css';
+let io = require('./../../node_modules/socket.io-client/socket.io.js');
 
 import { Headers, RequestOptions, Response, Http } from '@angular/http';
 
@@ -17,8 +18,20 @@ export class AppComponent {
   public downloadedData: Array<any> = [];
   public errorText = `Data could not have been loaded because of: `;
   public errorMessage: Array<any> = [];
+  public socket:any = null;
+  public inputField: string = 'Write Here!'
 
-  constructor (private _http: Http) { }
+  constructor (private _http: Http) { 
+    this.socket = io.connect('http://localhost:8080');
+    this.socket.on('message', () => {
+      console.log('message received!')
+    });
+
+    this.socket.on('inputedData', (inputedData: string) => {
+      this.inputField = inputedData;
+      console.log('inputedData received!: ', inputedData)
+    })
+   }
 
   getData(){
     this.getItemsFromServer().subscribe(
@@ -51,4 +64,10 @@ export class AppComponent {
     console.error(errMsg); // log to console instead
     return Observable.throw(errMsg);
   }
+
+  sendInput(event: Event) {
+    console.log('inputed text: ', event.target['value']);
+    this.socket.emit('inputedData', event.target['value'])
+  }
+
  }
