@@ -1,0 +1,15 @@
+dist
+node_modules
+typings
+npm-debug.log
+.idea
+src/configs/development/*
+src/scss/sprite.scss
+src/logs/*
+coverage
+public/stylesheets/styles.css
+public/img/sprite*.png
+*.map
+public/js
+
+
