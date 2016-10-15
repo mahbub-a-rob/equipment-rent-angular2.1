@@ -6,12 +6,17 @@ var express = require('express');
 var app = express();
 app.use(express.static('dist'))
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:4001");
+  next();
+});
+
 app.get('/', (req, res) => {
     console.log(`What you're asking for?`);
 });
 
-app.get('/data', (req, res) => {
-    res.json({"data": "data2"})
+app.get('/items', (req, res) => {
+    res.send({item: "item1"});
 });
 
 app.listen(8080);
