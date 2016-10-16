@@ -1,0 +1,6 @@
+<input #searchVal
+       class="search-input"
+       type="text" placeholder="search"
+       (keyup)="clearSearch($event)"
+       (keyup.enter)="sendValue($event)"
+       [(ngModel)]="searchValue">
