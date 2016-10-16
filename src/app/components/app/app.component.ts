@@ -3,7 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 // import { CartComponent, CartService } from '../cart';
 
-import { ItemModel } from './models';
+import { ItemModel } from '../../models';
 
 // import { EquipmentComponent, EquipmentListService } from './components/equipment';
 // import { CommunicationService, HttpRequestsService } from './services';
