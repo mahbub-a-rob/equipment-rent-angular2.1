@@ -1,69 +1,46 @@
-import { Component, OnInit } from '@angular/core';
-import '../../public/css/styles.scss';
-let io = require('./../../node_modules/socket.io-client/socket.io.js');
+import { Component, ViewEncapsulation } from '@angular/core';
+// import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { Headers, RequestOptions, Response, Http } from '@angular/http';
+// import { CartComponent, CartService } from '../cart';
 
-import { Observable } from 'rxjs/Rx';
+import { ItemModel } from './models';
+
+// import { EquipmentComponent, EquipmentListService } from './components/equipment';
+// import { CommunicationService, HttpRequestsService } from './services';
+// import { RentListService } from './components/rent-list';
+// import { SearchService } from './components/search';
+// import { ValidatorService } from './forms';
+
+
+// import { ItemDetailComponent } from './components/item-detail';
+// import { SearchComponent } from './components/search';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styles: [ require('./app.component.scss') ]
+  selector: 'app',
+  template: require('./app.component.html'),
+  styles: [ require('./app.component.scss') ],
+  encapsulation: ViewEncapsulation.None
+  // directives: [EquipmentComponent,
+  //              CartComponent,
+  //              ROUTER_DIRECTIVES,
+  //              SearchComponent],
+  // providers: [ CommunicationService,
+  //              CartService,
+  //              RentListService,
+  //              EquipmentListService,
+  //              ROUTER_DIRECTIVES,
+  //              SearchService,
+  //              HttpRequestsService,
+  //              ValidatorService ]
 })
 
-export class AppComponent implements OnInit {
-
-  public sampleData = [{ before: 'Watch here after clicking the button'}];
-  public downloadedData: Array<any> = [];
-  public errorText = `Data could not have been loaded because of: `;
-  public errorMessage: Array<any> = [];
-  public socket:any = null;
-  public inputField: string = 'Write Here!'
-
-  constructor (private _http: Http) { }
-
-  ngOnInit() {
-    this.socket = io.connect('http://localhost:8080');
-
-    this.socket.on('inputedData', (inputedData: string) => {
-      this.inputField = inputedData;
-    })
-  }
-
-  getData(){
-    this.getItemsFromServer().subscribe(
-      items => this.downloadedData.push(items),
-      error =>  this.errorMessage.push({error: this.errorText + <any>error})
-    )
-  }
-
-  getItemsFromServer(){
-        let itemsUrl = '/items' 
-        let options = new RequestOptions();
-        options.url = `http://localhost:8080${itemsUrl}`;
-    
-        return this._http.get(itemsUrl, options)
-                         .map(this.extractData)
-                         .catch(this.handleError);
-  }
-
-  private extractData(res: Response) {
-      let body = res.json();
-      return body || {};
-  }
-
-  private handleError(error: any) {
-    // In a real world app, we might use a remote logging infrastructure
-    // We'd also dig deeper into the error to get a better message
-    let errMsg = (error.message) ? error.message :
-      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
-    console.error(errMsg); // log to console instead
-    return Observable.throw(errMsg);
-  }
-
-  sendInput(event: Event) {
-    this.socket.emit('inputedData', event.target['value'])
-  }
-
- }
+export class AppComponent {
+  selectedItem: ItemModel;
+  // imgPath = `https://raw.githubusercontent.com/angular/angular.io
+  //            /master/public/resources/images/logos/angular2/angular.png`;
+  // constructor( private _communicationService: CommunicationService,
+  //              private _searchService: SearchService) {
+  //   _communicationService.selectionConfirmed$.subscribe(
+  //     selectedItem => { this.selectedItem = selectedItem; });
+  // }
+}

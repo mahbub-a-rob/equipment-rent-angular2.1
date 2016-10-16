@@ -1,19 +1,24 @@
+<section>
+    <header>
+        <img class="angularImg" [src]="imgPath" alt="Angular2">
+        <h1>Construction Part</h1>
+    </header>
+    <nav>
+        <ul>
+            <!--<a [routerLink]="['/equipment']"><li>Equipment</li></a>
+            <a [routerLink]="['/rent-list']"><li>Rent List</li></a>-->
+        </ul>
+    </nav>
+</section>
+
 <main>
-  <h1>Hello from Angular App with Webpack</h1>
-  <img src="../../public/images/angular.png">
-
-  <input (input)="sendInput($event)" class="normalInput" type="text" name="socketInput" value="{{ inputField }}"/>
-
-  <input (click)="getData()" type="button" name="getData" value="click to get Data">
-  <div *ngFor="let data of sampleData">
-    {{ data.before || undefined }}
-  </div>
-
-  <div *ngFor="let data of downloadedData">
-    {{ data.item || 'undefined' }}
-  </div>
-
-  <div *ngFor="let data of sampleData">
-    {{ data.error || undefined }}
-  </div>
+    <header class="searchBox">
+        <!--<search *ngIf="_searchService.isActive"></search>-->
+    </header>
+    <!--<router-outlet></router-outlet>-->
 </main>
+
+<aside>
+    <h2 class="cartLabel">Cart</h2>
+        <!--<cart [selectedItem]="selectedItem"></cart>-->
+</aside>

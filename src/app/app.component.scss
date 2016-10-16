@@ -1,17 +1,161 @@
+@import '../assets/common/_variables.scss';
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-size: $baseSize;
+}
+
+body {
+    font-size: $baseSize;
+    margin: 0;
+    height: 100%;
+    color: $textColor01;
+    text-align: left;
+}
+
+app {
+    position: initial;
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: initial;
+    @extend .clearfix;
+}
+
+section {
+    width: $navWidth;
+    background-color: $colorGrey01;
+}
+
 main {
-  padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: block;
+  width: $mainWidth;
+  position: relative;
+  background: $colorGrey05;
 }
 
-input[type='button'] {
-  display: block;
-  margin: auto;
+aside {
+    width: $cartWidth;
+    @extend .clearfix;
 }
 
-.normalInput{
-  display: block;
-  margin: 10px auto;
+header {
+    height: 63px;
+    padding: 8px 1.5em;
+    position: relative;
+    top: -5px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin: 0;
+    color: $colorGrey02;
+    text-align: center;
+}
+
+h2 {
+    height: 62px;
+    line-height: 60px;
+    padding: 6px 1.5em;
+    position: relative;
+    top: -5px;
+    margin: 0;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+ul {
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+
+li {
+    border-bottom: 3px solid $colorGrey03;
+    color: white;
+    padding: 0.83em 1.5em;
+    font-size: 1.525rem;
+    -webkit-transition: opacity 0.2s ease, background 0.2s ease, -webkit-box-shadow 0.2s ease;
+    transition: opacity 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+    background-color: $colorGrey04;
+}
+
+equipment, rent-list, item-detail, finalize {
+    display: block;
+    padding: $paddingGeneral;
+}
+
+button {
+    background-color: $colorRed;
+    color: #FFFFFF;
+    border: 0;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+
+button[disabled]{
+    background: $colorGrey08;
+    cursor: initial;
+}
+
+input {
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: $textColor01;
+}
+
+.angularImg {
+    width: 40px;
+}
+
+.searchBox{
+    background: $colorRed;
+}
+
+.cartLabel{
+    background: $colorGrey08;
+    position: relative;
+    top: 0;
+    font-size: 2em;
+    text-align: center;
+}
+
+.infobox {
+    background: $colorGrey06;
+    border: 2px solid $colorGrey07;
+    border-radius: 5px 5px 0 0; 
+    padding: 10px;
+    margin: 0;
+    line-height: 1.33;
+    min-height: 40px;
+    overflow: auto;
+    color: $textColor01;
+    font-size: 2rem;
+}
+
+.editbox {
+    background: white;
+    border: 2px solid $colorGrey07;
+    border-top: none;
+    padding: 10px;
+    margin: 0;
+    line-height: 2;
+    min-height: 66px;
+    overflow: auto;
+    color: $textColor01;
+    font-size: 1.5rem;
 }

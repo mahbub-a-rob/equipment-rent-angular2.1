@@ -6,7 +6,7 @@ import { HttpModule }    from '@angular/http';
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
   ],
   declarations: [
     AppComponent
