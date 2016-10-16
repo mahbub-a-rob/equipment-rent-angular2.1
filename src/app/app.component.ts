@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import '../../public/css/styles.css';
+import '../../public/css/styles.scss';
 let io = require('./../../node_modules/socket.io-client/socket.io.js');
 
 import { Headers, RequestOptions, Response, Http } from '@angular/http';
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styles: [ require('./app.component.scss') ]
 })
 
 export class AppComponent {
@@ -26,7 +26,6 @@ export class AppComponent {
 
     this.socket.on('inputedData', (inputedData: string) => {
       this.inputField = inputedData;
-      console.log('inputedData received!: ', inputedData)
     })
    }
 

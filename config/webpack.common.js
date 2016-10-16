@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+var path = require('path');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: {
@@ -13,6 +15,8 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.ts']
   },
+
+  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
 
   module: {
     loaders: [
@@ -29,15 +33,14 @@ module.exports = {
         loader: 'file?name=assets/[name].[hash].[ext]'
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+        loader: ExtractTextPlugin.extract('style', 'raw!postcss!sass')
       },
       {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw'
-      }
+        test: /\.scss$/,
+        loader: 'raw!postcss!sass',
+        include: path.resolve('src/app')} 
     ]
   },
 
