@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import '../../public/css/styles.scss';
 let io = require('./../../node_modules/socket.io-client/socket.io.js');
 
@@ -12,29 +12,30 @@ import { Observable } from 'rxjs/Rx';
   styles: [ require('./app.component.scss') ]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  public sampleData = [{ before: 'Whatch here after clicking the button'}];
+  public sampleData = [{ before: 'Watch here after clicking the button'}];
   public downloadedData: Array<any> = [];
   public errorText = `Data could not have been loaded because of: `;
   public errorMessage: Array<any> = [];
   public socket:any = null;
   public inputField: string = 'Write Here!'
 
-  constructor (private _http: Http) { 
+  constructor (private _http: Http) { }
+
+  ngOnInit() {
     this.socket = io.connect('http://localhost:8080');
 
     this.socket.on('inputedData', (inputedData: string) => {
       this.inputField = inputedData;
     })
-   }
+  }
 
   getData(){
     this.getItemsFromServer().subscribe(
       items => this.downloadedData.push(items),
       error =>  this.errorMessage.push({error: this.errorText + <any>error})
     )
-    console.log(this.downloadedData)
   }
 
   getItemsFromServer(){
@@ -62,7 +63,6 @@ export class AppComponent {
   }
 
   sendInput(event: Event) {
-    console.log('inputed text: ', event.target['value']);
     this.socket.emit('inputedData', event.target['value'])
   }
 
