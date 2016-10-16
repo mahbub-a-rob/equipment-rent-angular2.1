@@ -7,6 +7,7 @@ import { SearchModule } from '../search/search.module'
 import { SharedModule } from '../shared/shared.module';
 import { CartModule } from '../cart/cart.module';
 import { EquipmentModule } from '../equipment/components/equipment.module';
+import { RentListModule } from '../rent-list/components/rent-list.module';
 
 import { AppComponent } from './app.component';
 
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     SearchModule,
     CartModule,
-    EquipmentModule
+    EquipmentModule,
+    RentListModule
   ],
   declarations: [
     AppComponent

@@ -1,0 +1,42 @@
+@import 'src/assets/common/_variables.scss';
+
+:host {
+    font-size: 1.5rem;
+}
+
+ul {
+    text-align: center;
+    position: absolute;
+    left:0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 7px 0 7px 0;
+}
+
+ul a:first-child li{
+    border-top-left-radius: 5px;
+}
+
+li {
+    display: inline-block;
+    border: none;
+    list-style-type: none;
+    color: $textColorWhite; 
+    background: $colorRed;
+}
+
+li:hover {
+   background: $colorRed02; 
+}
+
+.routerContent{
+    position: relative;
+    border: 2px solid $colorGrey07;
+    margin-top: 20px;
+    background: white;
+    padding: 2rem 2rem;
+    border-radius: 7px;
+    box-sizing: border-box;
+    min-height: 370px;
+}
