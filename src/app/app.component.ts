@@ -23,9 +23,6 @@ export class AppComponent {
 
   constructor (private _http: Http) { 
     this.socket = io.connect('http://localhost:8080');
-    this.socket.on('message', () => {
-      console.log('message received!')
-    });
 
     this.socket.on('inputedData', (inputedData: string) => {
       this.inputField = inputedData;
