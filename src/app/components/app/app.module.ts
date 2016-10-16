@@ -6,16 +6,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { SearchModule } from '../search/search.module'
 import { SharedModule } from '../shared/shared.module';
 import { CartModule } from '../cart/cart.module';
+import { EquipmentModule } from '../equipment/components/equipment.module';
 
 import { AppComponent } from './app.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
+    AppRoutingModule,
     SharedModule,
     SearchModule,
-    CartModule
+    CartModule,
+    EquipmentModule
   ],
   declarations: [
     AppComponent

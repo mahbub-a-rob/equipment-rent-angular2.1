@@ -1,0 +1,34 @@
+@import 'src/assets/common/_variables.scss';
+
+input {
+    color: $textColor01;
+    padding: 5px
+}
+
+.go-back{
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+}
+
+.limit {
+    width: 5%;
+    font-size: 1.5rem;
+}
+
+.chosen-item-input{
+    font-size: 1.5rem;
+    width: 30%;
+}
+
+.detailsBox {
+    background: $colorYellow01;
+    color: $textColorYellow;
+    padding: 20px;
+    font-size: 1.5rem;
+    border: 2px solid $colorGrey07;
+    border-top: none;
+    padding: 10px;
+    margin: 0;
+    line-height: 2;
+}

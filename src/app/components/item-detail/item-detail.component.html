@@ -1,0 +1,17 @@
+<div class="infobox">
+    <span>Edit here an item details</span>
+</div>
+<div class="detailsBox" *ngIf="item">
+
+    <div>Datails of {{item.name}}</div>
+    <div>ID: {{item.id}}</div>
+    <div>Limit:
+        <input class="limit" type="text" [(ngModel)]="item.limit">
+    </div>
+
+    <span>Name: </span>
+    <input class="chosen-item-input" type="text" [(ngModel)]="item.name">
+
+</div>
+
+<button class="go-back" (click)="goBack()">Go back</button>

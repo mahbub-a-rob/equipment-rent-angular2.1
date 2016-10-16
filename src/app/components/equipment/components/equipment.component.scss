@@ -1,0 +1,46 @@
+@import 'src/assets/common/_variables.scss';
+
+:host {
+    padding-bottom:10%;
+}
+
+.selected {
+    background-color: $colorGreen01;
+}
+
+single-item {
+    padding-bottom: 1.7em;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+    margin: 0.5em 0em;
+    padding: 0.4em 0.7em;
+    border-radius: 5px 5px 5px 5px;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    display: flex;
+    border: 1px solid $colorGrey07;
+}
+
+single-item:hover {
+    background-color: $colorGreen01;
+    cursor: pointer;
+}
+
+.infobox__edit {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 9px 10px;
+    width: 50%;
+    float: left;
+}
+
+.infobox__input{
+    float: right;
+    width: 43.5%;
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: $textColor01;
+}
