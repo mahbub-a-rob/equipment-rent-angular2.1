@@ -1,0 +1,21 @@
+<div class="title">Chosen item:</div>
+<div class="item-name">
+    <div *ngIf="selectedItem">
+        {{selectedItem.name}}
+        <button class="chosen-item-input" (click)="goToDetails()">Details</button>
+    </div>
+</div>
+
+<div class="title">Items in cart:</div>
+<div class="rent-list">
+    <!--<button [disabled]="_cartService.collection.length === 0"
+            class="rent-list__button"
+            (click)="rentAll(_cartService.collection)"
+            *ngIf="_cartService.collection.length !== 0">Rent all!
+    </button>-->
+
+    <!--<div class="rent-list__items" *ngFor="let rented of _cartService.collection; let i = index">
+        <span class="delete-cross" (click)="deleteFromCollection(i)">X</span>        
+        <span class="cart-item">{{rented.name}}</span>
+    </div>-->
+</div>

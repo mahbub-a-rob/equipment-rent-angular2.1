@@ -1,0 +1,63 @@
+@import '../../../../../src/assets/common/_variables.scss';
+
+:host {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.title{
+    font-weight: 600;
+}
+
+.item-name, rent-list {
+    padding: 1rem 2rem;
+    min-height: 100px;
+}
+
+.chosen-item-input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 10px;
+    padding: 13px 0;
+    text-align: center;
+}
+
+.rent-list__items {
+    padding: 5px 0;
+    max-width: 240px;
+    margin-left: 2rem;
+    margin-top: 20px;
+    @extend .clearfix;
+}
+
+.rent-list__button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    margin-top: 10px;
+    padding: 13px 0;
+}
+
+.delete-cross {
+    margin-left: 0px;
+    display: block;
+    float: left;
+    position: relative;
+}
+
+.delete-cross:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.cart-item { 
+    display: block;
+    float: left;
+    max-width: 200px;
+    padding-left: 10px;
+    @extend .clearfix;
+}
