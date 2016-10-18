@@ -22,11 +22,22 @@ export class HttpRequestsService {
                          .catch(this.handleError);
     }
 
-    public postToServer(newItemName: ItemModel) {
+    public postToServer(newItemName: ItemModel, endpoint: string) {
         let body = JSON.stringify(newItemName);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        options.url = `${host}${itemsUrl}`;
+        options.url = `${host}${endpoint}`;
+
+        return this._http.post(itemsUrl, body, options)
+                         .map(this.extractData)
+                         .catch(this.handleError);
+    }
+
+    public updateNumber(newItemName: ItemModel, endpoint: string) {
+        let body = JSON.stringify(newItemName);
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        options.url = `${host}${endpoint}`;
 
         return this._http.post(itemsUrl, body, options)
                          .map(this.extractData)

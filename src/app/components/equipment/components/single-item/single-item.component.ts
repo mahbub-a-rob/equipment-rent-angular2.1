@@ -14,15 +14,14 @@ export class SingleItemComponent {
 
     @Input('singleItem') singleItem: ItemModel;
 
-    constructor(
-                private _router: Router,
+    constructor(private _router: Router,
                 private _cartService: CartService,
                 private _equipmentList: EquipmentListService) { }
 
     addToCart(rentedItem: ItemModel) {
         this._cartService.collection.push(this.singleItem);
-        this._equipmentList.collection[this.singleItem.id].limit--;
-    }
+        this._equipmentList.reduceFromCollection(this.singleItem);
+    }   
 
     goToDetails() {
         this._router.navigate(['/item-detail', this.singleItem.id]);

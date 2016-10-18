@@ -21,4 +21,10 @@ router.route('/app/items')
             res.send(req.body);
         });
 
+router.route('/app/items/update')
+        .post((req, res) => {
+            items[req.body.id].limit--;
+            res.send(items[req.body.id]);
+        });
+
 module.exports = router;

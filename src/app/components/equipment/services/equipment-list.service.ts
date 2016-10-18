@@ -9,6 +9,9 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
+const itemsUrl: string = '/app/items';
+const updateItemsUrl: string = '/app/items/update';
+
 @Injectable()
 export class EquipmentListService {
 
@@ -40,8 +43,14 @@ export class EquipmentListService {
     }
 
     public addToCollection(newItemName: ItemModel) {
-        this._httpRequestsService.postToServer(newItemName)
+        this._httpRequestsService.postToServer(newItemName, itemsUrl)
                           .subscribe(
                               item => this.collection = this.collection.concat(item));
+    }
+
+    public reduceFromCollection(singleItem: ItemModel) {
+        this._httpRequestsService.updateNumber(singleItem, updateItemsUrl)
+                            .subscribe(
+                                item => this.collection[item.id].limit-- )
     }
 }
