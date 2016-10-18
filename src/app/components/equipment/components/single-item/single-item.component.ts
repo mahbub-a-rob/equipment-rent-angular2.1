@@ -1,11 +1,8 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
-// import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
-// import { CartService,
-//          EquipmentListService,
-//          ItemModel} from '../../index';
-
-import { EquipmentListService,
+import { CartService,
+         EquipmentListService,
          ItemModel} from '../../index';
 
 @Component({
@@ -18,16 +15,16 @@ export class SingleItemComponent {
     @Input('singleItem') singleItem: ItemModel;
 
     constructor(
-                // private _router: Router,
-                // private _cartService: CartService,
+                private _router: Router,
+                private _cartService: CartService,
                 private _equipmentList: EquipmentListService) { }
 
     addToCart(rentedItem: ItemModel) {
-        // this._cartService.collection.push(this.singleItem);
-        // this._equipmentList.collection[this.singleItem.id].limit--;
+        this._cartService.collection.push(this.singleItem);
+        this._equipmentList.collection[this.singleItem.id].limit--;
     }
 
     goToDetails() {
-        // this._router.navigate(['/item-detail', this.singleItem.id]);
+        this._router.navigate(['/item-detail', this.singleItem.id]);
     }
 }

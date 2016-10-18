@@ -1,4 +1,4 @@
-// export { RentListService } from './services/rent-list.service';
+export { RentListService } from './services/rent-list.service';
 // export { MenuService } from './services/menu-service';
 // export { EquipmentListService } from '../equipment';
 // export { FinalizeForm } from '../../forms/';

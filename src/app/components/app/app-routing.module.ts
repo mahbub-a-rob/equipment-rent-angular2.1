@@ -14,7 +14,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/equipment', pathMatch: 'full'},
     { path: 'equipment',  component: EquipmentComponent },
     { path: 'rent-list',  component: RentListComponent },
-    // { path: 'item-detail/:id', component: ItemDetailComponent },
+    { path: 'item-detail/:id', component: ItemDetailComponent },
     // rentListRoutes,
 ];
 

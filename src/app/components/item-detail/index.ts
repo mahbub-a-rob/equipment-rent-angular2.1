@@ -1,1 +1,1 @@
-export { ItemDetailComponent } from './item-detail.component';
+export { ItemDetailModule } from './item-detail.module';

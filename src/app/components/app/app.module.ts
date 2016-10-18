@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CartModule } from '../cart/cart.module';
 import { EquipmentModule } from '../equipment/components/equipment.module';
 import { RentListModule } from '../rent-list/components/rent-list.module';
+import { ItemDetailModule } from '../item-detail/item-detail.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpRequestsService } from '../../services/';
 import { CommunicationService } from '../../services/';
 import { SearchService } from '../search/';
+import { CartService } from '../cart/';
+import { RentListService } from '../rent-list/';
 
 @NgModule({
   imports: [
@@ -25,7 +28,8 @@ import { SearchService } from '../search/';
     SearchModule,
     CartModule,
     EquipmentModule,
-    RentListModule
+    RentListModule,
+    ItemDetailModule
   ],
   declarations: [
     AppComponent
@@ -33,7 +37,9 @@ import { SearchService } from '../search/';
   providers: [
     HttpRequestsService,
     CommunicationService,
-    SearchService
+    SearchService,
+    CartService,
+    RentListService
   ],
   bootstrap: [ AppComponent ]
 })

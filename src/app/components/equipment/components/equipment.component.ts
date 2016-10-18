@@ -19,7 +19,6 @@ import { EquipmentListService,
     selector: 'equipment',
     template: require('./equipment.component.html'),
     styles: [ require('./equipment.component.scss') ]
-    // pipes: [ SearchPipe ]
 })
 export class EquipmentComponent implements OnInit, OnDestroy {
     selectedItem: ItemModel;

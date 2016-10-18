@@ -8,14 +8,14 @@
 
 <div class="title">Items in cart:</div>
 <div class="rent-list">
-    <!--<button [disabled]="_cartService.collection.length === 0"
+    <button [disabled]="_cartService.collection.length === 0"
             class="rent-list__button"
             (click)="rentAll(_cartService.collection)"
             *ngIf="_cartService.collection.length !== 0">Rent all!
-    </button>-->
+    </button>
 
-    <!--<div class="rent-list__items" *ngFor="let rented of _cartService.collection; let i = index">
+    <div class="rent-list__items" *ngFor="let rented of _cartService.collection; let i = index">
         <span class="delete-cross" (click)="deleteFromCollection(i)">X</span>        
         <span class="cart-item">{{rented.name}}</span>
-    </div>-->
+    </div>
 </div>
