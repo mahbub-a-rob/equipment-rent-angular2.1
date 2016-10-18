@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { SearchService } from '../index';
+import { SearchService } from '../index';
 
 @Component({
     selector: 'search',
@@ -10,17 +10,17 @@ export class SearchComponent {
 
     public searchValue: string;
 
-    // constructor( private _searchService: SearchService) {}
+    constructor( private _searchService: SearchService) {}
 
-    // sendValue(event: any) {
-    //     this._searchService.searchValue = event.target.value;
-    // }
+    sendValue(event: any) {
+        this._searchService.searchValue = event.target.value;
+    }
 
-    // clearSearch(event: any) {
-    //     if (event.target.value === '') { this._searchService.searchValue = event.target.value; }
-    // }
+    clearSearch(event: any) {
+        if (event.target.value === '') { this._searchService.searchValue = event.target.value; }
+    }
 
     ngOnInit() {
-    //    this.searchValue = this._searchService.searchValue;
+       this.searchValue = this._searchService.searchValue;
     }
 }

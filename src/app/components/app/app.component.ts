@@ -6,9 +6,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { ItemModel } from '../../models';
 
 // import { EquipmentComponent, EquipmentListService } from './components/equipment';
-import { CommunicationService, HttpRequestsService } from './../../services';
+import { CommunicationService, HttpRequestsService } from '../../services';
 // import { RentListService } from './components/rent-list';
-// import { SearchService } from './components/search';
+import { SearchService } from '../search';
 // import { ValidatorService } from './forms';
 
 
@@ -39,9 +39,8 @@ export class AppComponent {
   // imgPath = `https://raw.githubusercontent.com/angular/angular.io
   //            /master/public/resources/images/logos/angular2/angular.png`;
   constructor( private _communicationService: CommunicationService,
-               ) {
+               private _searchService: SearchService) {
     _communicationService.selectionConfirmed$.subscribe(
-      selectedItem => { this.selectedItem = selectedItem; });
+        selectedItem => { this.selectedItem = selectedItem; });
   }
-  //private _searchService: SearchService
 }

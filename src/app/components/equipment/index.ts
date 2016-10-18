@@ -1,7 +1,7 @@
 export { CommunicationService } from '../../services/';
 // export { CartService } from '../cart';
 export { EquipmentListService } from './services/equipment-list.service';
-// export { SearchService } from '../search';
+export { SearchService } from '../search';
 
 export { PipesModule } from './pipes';
 

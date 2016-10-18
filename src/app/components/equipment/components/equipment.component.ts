@@ -2,12 +2,13 @@ import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/
 
 import { EquipmentListService,
          CommunicationService,
+         SearchService,
          ItemModel } from '../index';
 
 // import { 
 //          SingleItemComponent,
 //          AddItemComponent,
-//          SearchService,
+//          ,
 //          
 //          ItemModel,
 //          SearchPipe } from '../index';
@@ -25,20 +26,17 @@ export class EquipmentComponent implements OnInit, OnDestroy {
     searchValue: 'Rope';
 
     constructor(private _equipmentList: EquipmentListService,
+                private _searchService: SearchService,
                 private _communicationService: CommunicationService) {}
 
-    // constructor(private _equipmentList: EquipmentListService,
-    //             private _searchService: SearchService,
-    //             private _communicationService: CommunicationService ) {}
-
     ngOnInit() {
-        // setTimeout(() => {
-        //     this._searchService.isActive = true;
-        // }, 0);
+        setTimeout(() => {
+            this._searchService.isActive = true;
+        }, 0);
     }
 
     ngOnDestroy() {
-        // this._searchService.isActive = false;
+        this._searchService.isActive = false;
     }
 
     selectItem(item: ItemModel) {
