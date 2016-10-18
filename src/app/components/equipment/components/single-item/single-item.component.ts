@@ -21,7 +21,6 @@ export class SingleItemComponent {
     addToCart(rentedItem: ItemModel) {
         this._cartService.collection.push(this.singleItem);
         this._equipmentList.reduceFromCollection(this.singleItem);
-        console.log(this._equipmentList.collection[this.singleItem.id].limit);
     }   
 
     goToDetails() {

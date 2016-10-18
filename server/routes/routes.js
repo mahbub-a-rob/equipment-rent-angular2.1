@@ -13,7 +13,6 @@ router.route('/')
 
 router.route('/app/items')
         .get((req, res) => {
-            console.log('got GET HTTP Request!')
             res.send(items);
         })
         .post((req, res) => {
