@@ -33,7 +33,7 @@ export class HttpRequestsService {
                          .catch(this.handleError);
     }
 
-    public updateNumber(newItemName: ItemModel, endpoint: string) {
+    public updateLimit(newItemName: ItemModel, endpoint: string) {
         let body = JSON.stringify(newItemName);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });

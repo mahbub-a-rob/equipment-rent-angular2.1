@@ -3,12 +3,11 @@
 var temporaryValue = 'Write Here!';
 
 function ioConnection(client) {
-    console.log('client connected and I am happy!');
-    client.emit('inputedData', temporaryValue);
+    console.log('client connected.io and I am happy!');
 
-    client.on('inputedData', (inputedData) => {
-        temporaryValue = inputedData;
-        client.broadcast.emit('inputedData', inputedData);
+    client.on('substraction', (item) => {
+        console.log('got', item);
+        client.broadcast.emit('substraction', item);
     });
 };
 
