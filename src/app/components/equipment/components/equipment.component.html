@@ -17,13 +17,6 @@
 </single-item>
 
 <!--<single-item
-    *ngFor="let item of _equipmentList.collection"
-    [singleItem]="item"
-    [class.selected] = "item === _equipmentList.singleItem"
-    (click)="selectItem(item)">
-</single-item>-->
-
-<!--<single-item
     *ngFor="let item of _equipmentList.collection | search: _searchService.searchValue"
     [singleItem]="item"
     [class.selected] = "item === _equipmentList.singleItem"

@@ -1,16 +1,18 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
-import { EquipmentListService } from '../index';
+import { EquipmentListService,
+         CommunicationService,
+         ItemModel } from '../index';
 
-// import { EquipmentListService,
+// import { 
 //          SingleItemComponent,
 //          AddItemComponent,
 //          SearchService,
-//          CommunicationService,
+//          
 //          ItemModel,
 //          SearchPipe } from '../index';
 
-import { ItemModel } from '../index';
+
 
 @Component({
     selector: 'equipment',
@@ -21,7 +23,8 @@ import { ItemModel } from '../index';
 export class EquipmentComponent implements OnInit, OnDestroy {
     selectedItem: ItemModel;
 
-    constructor(private _equipmentList: EquipmentListService) {}
+    constructor(private _equipmentList: EquipmentListService,
+                private _communicationService: CommunicationService) {}
 
     // constructor(private _equipmentList: EquipmentListService,
     //             private _searchService: SearchService,
@@ -39,6 +42,6 @@ export class EquipmentComponent implements OnInit, OnDestroy {
 
     selectItem(item: ItemModel) {
         this._equipmentList.singleItem = item;
-        // this._communicationService.confirmSelection(item);
+        this._communicationService.confirmSelection(item);
     }
 }

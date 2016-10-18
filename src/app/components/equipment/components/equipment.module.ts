@@ -14,8 +14,7 @@ import { EquipmentListService } from '../index';
     ],
     declarations: [ EquipmentComponent,
                     SingleItemComponent ],
-    exports: [ EquipmentComponent,
-               SingleItemComponent ],
+    exports: [ EquipmentComponent ],
     providers: [ EquipmentListService ],
         // providers: [SearchService],
 })

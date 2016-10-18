@@ -1,4 +1,4 @@
-// export { HttpRequestsService, CommunicationService } from '../../services/';
+export { CommunicationService } from '../../services/';
 // export { CartService } from '../cart';
 export { EquipmentListService } from './services/equipment-list.service';
 // export { SearchService } from '../search';

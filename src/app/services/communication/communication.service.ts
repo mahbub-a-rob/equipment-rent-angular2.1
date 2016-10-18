@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject }    from 'rxjs/Subject';
-import { ItemModel } from '../index.ts';
+import { ItemModel } from '../index';
 
 @Injectable()
 export class CommunicationService {

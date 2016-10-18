@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpRequestsService } from '../../services/';
+import { CommunicationService } from '../../services/';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { HttpRequestsService } from '../../services/';
     AppComponent
   ],
   providers: [
-    HttpRequestsService
+    HttpRequestsService,
+    CommunicationService
   ],
   bootstrap: [ AppComponent ]
 })
