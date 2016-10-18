@@ -7,7 +7,6 @@ import { EquipmentListService,
 
 @Component({
     selector: 'add-item',
-    templateUrl: 'add-item.component.html',
     template: require('./add-item.component.html'),
     styles: [ require('./add-item.component.scss') ]
 })
