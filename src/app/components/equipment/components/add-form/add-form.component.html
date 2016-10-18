@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit(addItemForm.value.newItem)" #addItemForm="ngForm">
+<div class="single-item">
+    <span class="single-item__number">#</span>
+    <span class="single-item__item">
+        <input class="name-input"
+                type="text" required
+                placeholder="Write here"
+                name="newItem" ngModel>
+    </span>
+</div>
+<button type="submit" class="add-button" [disabled]="!addItemForm.form.valid">Add</button>
+</form>
+
+<div class="invalid-message" [hidden]="addItemForm.valid || addItemForm.pristine">Forgot to name your new Item?</div>

@@ -1,0 +1,73 @@
+@import 'src/assets/common/_variables.scss';
+@import 'src/assets/common/_validation.scss';
+
+:host {
+    padding-bottom: 1.7em;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+    margin: 0.5em 0em;
+    padding: 0.7em;
+    border-radius: 5px 5px 5px 5px;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    display: block;
+    border: 1px solid $colorGrey07;
+}
+
+.add-button {
+    padding: 0px 13px;
+    width: 25%;
+}
+
+.single-item {
+  position: relative;
+  width: 75%;
+  display: flex;
+  background: $colorGreen02;
+  border: 2px solid $textColor01;
+  border-radius: 2px;
+}
+
+.single-item__number{
+    width: 25%;
+    display: inline-block;
+    padding: 5px 0;
+    background-color: $colorGreen01;
+    color: white;
+    text-align: center;
+}
+
+.single-item__item {
+    width: 100%;
+}
+
+.single-item__button{
+    padding: 0px 13px;
+    width: 25%;
+}
+
+.name-input{
+    height: 100%;
+    width: 100%;
+    padding: 0 8px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.invalid-message {
+    text-align: left;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+    color: #bc0404;
+}
+
+form {
+    display: flex;
+    width: 100%;
+}
+
+input {
+    margin: 0;
+}

@@ -26,6 +26,7 @@ export class HttpRequestsService {
         let body = JSON.stringify(newItemName);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
+        options.url = `${host}${itemsUrl}`;
 
         return this._http.post(itemsUrl, body, options)
                          .map(this.extractData)
