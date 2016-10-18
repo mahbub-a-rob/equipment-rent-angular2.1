@@ -3,7 +3,7 @@ export { CommunicationService } from '../../services/';
 export { EquipmentListService } from './services/equipment-list.service';
 // export { SearchService } from '../search';
 
-// export { SearchPipe } from './pipes/search.pipe';
+export { PipesModule } from './pipes';
 
 export { SingleItemComponent } from './components/single-item/single-item.component';
 // export { AddItemComponent } from './components/add-item/add-item.component';

@@ -22,6 +22,7 @@ import { EquipmentListService,
 })
 export class EquipmentComponent implements OnInit, OnDestroy {
     selectedItem: ItemModel;
+    searchValue: 'Rope';
 
     constructor(private _equipmentList: EquipmentListService,
                 private _communicationService: CommunicationService) {}
