@@ -2,15 +2,21 @@ import { NgModule }from '@angular/core';
 
 import { SharedModule } from '../../shared/shared.module';
 
-import { EquipmentComponent } from './equipment.component';
+import { EquipmentComponent,
+         SingleItemComponent } from '../index';
+
+import { EquipmentListService } from '../index';
 
 
 @NgModule({
     imports: [
         SharedModule
     ],
-    declarations: [ EquipmentComponent ],
-    // providers: [SearchService],
-    exports: [ EquipmentComponent ],
+    declarations: [ EquipmentComponent,
+                    SingleItemComponent ],
+    exports: [ EquipmentComponent,
+               SingleItemComponent ],
+    providers: [ EquipmentListService ],
+        // providers: [SearchService],
 })
 export class EquipmentModule { }

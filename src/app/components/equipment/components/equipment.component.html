@@ -1,10 +1,27 @@
 <div class="infobox">Equipment</div>
 <div class="editbox">
-    <!--<div *ngIf="_equipmentList.singleItem" class="infobox__edit">{{_equipmentList.singleItem.name}}</div>
+    <div *ngIf="_equipmentList.singleItem" class="infobox__edit">
+        <span>Name: </span>
+        {{_equipmentList.singleItem.name}}
+    </div>
     <input *ngIf="_equipmentList.singleItem"
             class="infobox__input" type="text"
-            [(ngModel)]="_equipmentList.singleItem.name"/>-->
+            [(ngModel)]="_equipmentList.singleItem.name"/>
 </div>
+
+<single-item
+    *ngFor="let item of _equipmentList.collection"
+    [singleItem]="item"
+    [class.selected] = "item === _equipmentList.singleItem"
+    (click)="selectItem(item)">
+</single-item>
+
+<!--<single-item
+    *ngFor="let item of _equipmentList.collection"
+    [singleItem]="item"
+    [class.selected] = "item === _equipmentList.singleItem"
+    (click)="selectItem(item)">
+</single-item>-->
 
 <!--<single-item
     *ngFor="let item of _equipmentList.collection | search: _searchService.searchValue"

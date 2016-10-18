@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { ItemModel } from '../index.ts';
+import { ItemModel } from '../index';
 
 import { Observable } from 'rxjs/Rx';
 
-const itemsUrl: string = 'app/items';
+const host: string = 'http://localhost:8080'
+const itemsUrl: string = '/app/items';
 
 @Injectable()
 /**
@@ -15,7 +16,8 @@ export class HttpRequestsService {
     constructor(private _http: Http) { }
 
     public getItemsFromServer() {
-        return this._http.get(itemsUrl)
+        let options = new RequestOptions({ url: `${host}${itemsUrl}` });
+        return this._http.get(itemsUrl, options)
                          .map(this.extractData)
                          .catch(this.handleError);
     }
@@ -32,7 +34,7 @@ export class HttpRequestsService {
 
     private extractData(res: Response) {
         let body = res.json();
-        return body.data || {};
+        return body || {};
     }
 
     private handleError (error: any) {

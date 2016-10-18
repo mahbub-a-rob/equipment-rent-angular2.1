@@ -1,0 +1,39 @@
+@import 'src/assets/common/_variables.scss';
+
+.single-item {
+  position: relative;
+  width: 75%;
+  display: flex;
+  background: $colorGreen02;
+  border: 2px solid $textColor01;
+  border-radius: 2px;
+}
+
+.single-item__number{
+    width: 20%;
+    display: inline-block;
+    padding: 5px 0;
+    background-color: $colorGreen01;
+    color: white;
+    text-align: center;
+}
+
+.single-item__item {
+    width: 70%;
+    padding: 3px 10px;
+}
+
+.single-item__limit{
+    padding: 3px 10px;
+}
+
+.top-item{
+    width:400px;
+    text-align: right;
+    @extend .clearfix;
+}
+
+.single-item__button{
+    padding: 0px 13px;
+    width: 25%;
+}

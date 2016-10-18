@@ -1,0 +1,13 @@
+<div class="single-item" 
+     (dblclick)="goToDetails()">
+    
+    <span class="single-item__number">{{singleItem.id}}</span>
+    <span class="single-item__item">{{singleItem.name}}</span>
+    <span class="single-item__limit">{{singleItem.limit}}</span>
+
+</div>
+<button class="single-item__button"
+        (click)="addToCart(singleItem)"
+        [disabled]="singleItem.limit < 1">
+        Add to cart
+</button>

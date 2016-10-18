@@ -9,8 +9,6 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-const itemsUrl: string = 'app/items';
-
 @Injectable()
 export class EquipmentListService {
 
@@ -28,7 +26,9 @@ export class EquipmentListService {
     public getItems() {
         this._httpRequestsService.getItemsFromServer()
                           .subscribe(
-                            items => this.collection = items,
+                            (items) => {
+                                this.collection = items;
+                            },
                             error =>  this.errorMessage = <any>error);
     }
 

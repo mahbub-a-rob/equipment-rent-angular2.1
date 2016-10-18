@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
+import { EquipmentListService } from '../index';
+
 // import { EquipmentListService,
 //          SingleItemComponent,
 //          AddItemComponent,
@@ -13,13 +15,13 @@ import { ItemModel } from '../index';
 @Component({
     selector: 'equipment',
     template: require('./equipment.component.html'),
-    styles: [ require('./equipment.component.scss') ],
-    // directives: [ SingleItemComponent,
-    //               AddItemComponent ],
+    styles: [ require('./equipment.component.scss') ]
     // pipes: [ SearchPipe ]
 })
 export class EquipmentComponent implements OnInit, OnDestroy {
     selectedItem: ItemModel;
+
+    constructor(private _equipmentList: EquipmentListService) {}
 
     // constructor(private _equipmentList: EquipmentListService,
     //             private _searchService: SearchService,
@@ -36,7 +38,7 @@ export class EquipmentComponent implements OnInit, OnDestroy {
     }
 
     selectItem(item: ItemModel) {
-        // this._equipmentList.singleItem = item;
+        this._equipmentList.singleItem = item;
         // this._communicationService.confirmSelection(item);
     }
 }
