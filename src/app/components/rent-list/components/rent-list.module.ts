@@ -1,16 +1,20 @@
 import { NgModule }from '@angular/core';
 
 import { SharedModule } from '../../shared/shared.module';
+import { RentListRoutingModule } from './rent-list-routing.module'
 
 import { RentListComponent } from './rent-list.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { MenuService } from '../services/menu-service';
 
 
 @NgModule({
     imports: [
-        SharedModule
+        SharedModule,
+        RentListRoutingModule
     ],
-    declarations: [ RentListComponent ],
-    // providers: [SearchService],
-    exports: [ RentListComponent ],
+    declarations: [ RentListComponent,
+                    StatisticsComponent ],
+    providers: [ MenuService ]
 })
 export class RentListModule { }
