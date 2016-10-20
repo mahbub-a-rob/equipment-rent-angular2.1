@@ -5,7 +5,6 @@ import { RentListService, MenuService } from '../index';
     selector: 'rent-list',
     template: require('./rent-list.component.html'),
     styles: [ require('./rent-list.component.scss') ]
-    // providers: [ MenuService ]
 })
 export class RentListComponent {
 

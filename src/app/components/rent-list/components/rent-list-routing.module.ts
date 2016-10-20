@@ -3,15 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { StatisticsComponent,
          RentListComponent,
-         ListViewComponent } from '../index';
+         ListViewComponent,
+         FinalizeComponent } from '../index';
 
 const rentListRoutes: Routes = [
     { path: 'rent-list', component: RentListComponent, children: [
         { path: 'list-view', component: ListViewComponent },
-        { path: 'statistics', component: StatisticsComponent } ] }
-    //     { path: 'finalize', component: FinalizeComponent },
+        { path: 'statistics', component: StatisticsComponent },
+        { path: 'finalize', component: FinalizeComponent }
     //     { path: 'submited', component: SubmitedStateComponent }
-    // ] }
+    ] }
 ];
 
 @NgModule({

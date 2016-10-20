@@ -6,11 +6,6 @@ var path = require('path');
 
 var items = require('../../src/assets/data/items');
 
-router.route('/')
-        .get((req, res) => {
-            console.log(`What you're asking for?`);
-        });
-
 router.route('/app/items')
         .get((req, res) => {
             res.send(items);
