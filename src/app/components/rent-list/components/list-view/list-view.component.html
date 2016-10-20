@@ -1,0 +1,29 @@
+<table>
+    <thead>
+        <th class="column01">#</th>
+        <th class="column02">who</th>
+        <th class="column03">item</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let singleRent of _rentListService.collection; let i = index">
+            <td>{{i}}</td>
+            <td>{{singleRent.who}}</td>
+            <td>
+                <span *ngFor="let items of singleRent.list">
+                    {{items.name}}, 
+                </span>
+            </td>
+            <td>
+                <span class="delete-cross" (click)="deleteFromCollection(i, singleRent.list)">X</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!_rentListService.collection.length" class="noItemsInfo">No rented items</div>
+<!--<button class="finalizeButton"
+        [routerLink]="['/rent-list/finalize']"
+        *ngIf="_rentListService.collection.length !== 0">
+            Finalize
+</button>-->

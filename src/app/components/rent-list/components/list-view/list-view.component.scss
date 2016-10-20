@@ -1,0 +1,70 @@
+@import 'src/assets/common/_variables.scss';
+
+:host {
+    margin-top: 60px;
+    display: block;
+}
+
+td {
+    word-break: break-all;
+}
+
+chosen-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 2px solid $colorBlue01;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    min-height: 115px;
+}
+
+.selected {
+    background-color: $colorBlue03;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 80px;
+}
+
+th, td {
+    padding: 0px 6px 6px;
+    width: initial;
+    vertical-align: top;
+}
+
+.column01 {
+    width: 10%;
+}
+
+.column02 {
+    width: 20%;
+}
+
+.column03 {
+    width: 70%;
+}
+
+.delete-cross{
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+.delete-cross:hover{
+    color:red;
+}
+
+.noItemsInfo{
+    text-align: center;
+    margin: 50px 0;
+}
+
+.finalizeButton{
+    display: block;
+    font-size: 1.5rem;
+    padding: 0.83em 1.5em;
+    margin: 1rem auto;
+}
