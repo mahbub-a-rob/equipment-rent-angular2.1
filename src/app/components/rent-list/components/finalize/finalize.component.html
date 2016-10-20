@@ -1,0 +1,48 @@
+<!--<form class="finalizeForm" [formGroup]="_form.finalizeForm" (ngSubmit)="onSubmit(_form.finalizeForm.valid)">
+    
+    <div class="inputBlock">
+        <div class="inputBox">
+            <label>First Name</label>
+            <input type="text" placeholder="First Name" [formControl]="_form.firstName">
+            <div *ngIf="showError && !_form.firstName.valid" class="errorMessage">Enter a first name</div>
+        </div>
+
+        <div class="inputBox">
+            <label>Last Name</label>
+            <input type="text" placeholder="Last Name" [formControl]="_form.lastName">
+            <div *ngIf="showError && !_form.lastName.valid" class="errorMessage">Enter a last name</div>
+        </div>
+    </div>
+
+    <div class="inputBlock">
+        <div class="inputBox">
+            <label>Email</label>
+            <input type="text" placeholder="Email" [formControl]="_form.email">
+            <div *ngIf="showError && !_form.email.valid" class="errorMessage">Email Adres Invalid</div>
+        </div>
+
+        <div class="inputBox">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Phone Number" [formControl]="_form.phone">
+            <div *ngIf="showError && !_form.phone.valid" class="errorMessage">
+                Phone number must have 9 digits
+            </div>
+        </div>
+    </div>
+
+    <div class="terms">
+      <input class="termsInput" type="checkbox" [checked]="false" id="terms" [formControl]="_form.agreement"/>
+      <label
+        [class.agreed] = "agreed === true"
+        (click)="agreement()"
+        class="termsLabel" for="terms">
+            I agree the Terms and Conditions
+      </label>
+    </div>
+    <div *ngIf="showError && _form.agreement.hasError('invalidAgreement')" class="errorMessage">
+        To submit please accept this
+    </div>
+
+    <button class="submit">Submit</button>
+</form>-->
+finalize

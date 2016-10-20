@@ -7,6 +7,7 @@ import { RentListComponent } from './rent-list.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { MenuService } from '../services/menu-service'
 import { ListViewComponent } from './list-view/list-view.component';
+import { FinalizeComponent } from './finalize/finalize.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ListViewComponent } from './list-view/list-view.component';
     ],
     declarations: [ RentListComponent,
                     StatisticsComponent,
-                    ListViewComponent ],
+                    ListViewComponent,
+                    FinalizeComponent ],
     providers: [ MenuService ]
 })
 export class RentListModule { }

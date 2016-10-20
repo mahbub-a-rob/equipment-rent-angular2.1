@@ -1,0 +1,128 @@
+@import 'src/assets/common/_variables.scss';
+@import 'src/assets/common/_validation.scss';
+
+.inputBlock {
+    display: flex;
+}
+
+.inputBox { 
+    display: inline-block;
+    width: 49%;
+    flex: auto;
+    margin-bottom: 15px;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 90%;
+}
+
+input[type='checkbox'] {
+    width: initial;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.terms {
+    position: relative;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.termsInput{
+    padding-left: 4em;
+    color: rgba(0, 0, 0, 0.6);
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+.termsLabel {
+    padding-left: 4em;
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+
+.termsLabel::before {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    content: '';
+    top: -0.25em;
+    left: 0em;
+    z-index: 1;
+    background-color: #FFFFFF;
+    width: 3em;
+    height: 1.5em;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 50rem;
+}
+
+.termsLabel::after {
+        opacity: 1;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    content: '';
+    position: absolute;
+    top: 0.15em;
+    left: 0.5em;
+    z-index: 2;
+    border: none;
+    width: 0.75em;
+    height: 0.75em;
+    background-color: #D95C5C;
+    border-radius: 50rem;
+    -webkit-transition: background 0.3s ease 0s, left 0.3s ease 0s;
+    transition: background 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.agreed::after {
+    left: 1.8em;
+    background-color: #89b84c;
+}
+
+.submit{
+    float: right;
+}
+
+.errorMessage{
+    position: relative;
+    margin-top: 1em;
+    background-color: #D95C5C;
+    border-color: #D95C5C;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    vertical-align: middle;
+    margin: -0.25em 0.25em 0em;
+    padding: 0.5em 0.8em;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 0.325em;
+    box-sizing: border-box;
+    transition: background 0.1s linear;
+    width: 50%;
+    text-align: center;
+}
+
+.errorMessage::before {
+    margin-left: -0.3em;
+    top: -0.3em;
+    left: 22%;
+    position: absolute;
+    content: "";
+    width: 0.6em;
+    height: 0.6em;
+    background-image: none;
+    transform: rotate(45deg);
+    z-index: 2;
+    transition: background 0.1s linear;
+    background-color: #D95C5C;
+}
