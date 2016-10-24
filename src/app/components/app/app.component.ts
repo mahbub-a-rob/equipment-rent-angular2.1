@@ -1,15 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-// import { CartComponent, CartService } from '../cart';
-
 import { ItemModel } from '../../models';
 import { CommunicationService, HttpRequestsService } from '../../services';
-// import { RentListService } from './components/rent-list';
 import { SearchService } from '../search';
-// import { ValidatorService } from './forms';
 
-
-// import { ItemDetailComponent } from './components/item-detail';
 
 @Component({
   selector: 'app',

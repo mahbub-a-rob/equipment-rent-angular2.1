@@ -18,7 +18,6 @@ const routes: Routes = [
        { path: '', component: ListViewComponent }
     ] },
     { path: 'item-detail/:id', component: ItemDetailComponent },
-    // rentListRoutes,
 ];
 
 @NgModule({
