@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { CartService } from '../services/cart.service';
@@ -12,7 +12,7 @@ import { ItemModel } from '../../../models';
     styles: [ require('./cart.component.scss') ]
 })
 
-export class CartComponent {
+export class CartComponent implements OnInit {
 
     rentAllTriggered: Boolean = false;
 
@@ -22,6 +22,10 @@ export class CartComponent {
                   private _router: Router,
                   private _rentListService: RentListService,
                   private _cartService: CartService ) { }
+
+    ngOnInit() {
+        this._cartService.getItems();
+    }
 
     goToDetails() {
         this._router.navigate(['/item-detail', this.selectedItem.id]);

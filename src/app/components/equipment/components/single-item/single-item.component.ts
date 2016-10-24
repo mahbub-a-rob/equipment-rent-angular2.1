@@ -19,7 +19,6 @@ export class SingleItemComponent {
 
     addToCart(rentedItem: ItemModel) {
         this._equipmentList.addToCart(this.singleItem);
-        //this._cartService.collection.push(this.singleItem);
     }   
 
     goToDetails() {

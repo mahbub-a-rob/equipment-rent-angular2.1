@@ -18,10 +18,7 @@ export class CartService {
     public itemsUrl: string = '/app/items/cart';
 
     constructor(
-        private _httpRequestsService: HttpRequestsService
-        ) {
-        this.getItems();
-    }
+        private _httpRequestsService: HttpRequestsService) {  }
 
     public getItems() {
         this._httpRequestsService.getItemsFromServer(this.itemsUrl)
