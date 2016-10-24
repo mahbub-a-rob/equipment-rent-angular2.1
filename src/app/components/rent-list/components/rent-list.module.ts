@@ -8,6 +8,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { MenuService } from '../services/menu-service'
 import { ListViewComponent } from './list-view/list-view.component';
 import { FinalizeComponent } from './finalize/finalize.component';
+import { SubmitedStateComponent } from './submited/submited-state.component';
 
 import { FinalizeForm, ValidatorService } from '../../../forms';
 
@@ -20,7 +21,8 @@ import { FinalizeForm, ValidatorService } from '../../../forms';
     declarations: [ RentListComponent,
                     StatisticsComponent,
                     ListViewComponent,
-                    FinalizeComponent ],
+                    FinalizeComponent,
+                    SubmitedStateComponent ],
     providers: [ MenuService, FinalizeForm, ValidatorService ]
 })
 export class RentListModule { }
