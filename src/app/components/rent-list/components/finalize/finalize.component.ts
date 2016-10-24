@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import {
-//   REACTIVE_FORM_DIRECTIVES,
-// } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { RentListService, MenuService, FinalizeForm } from '../../index';
 
@@ -16,6 +14,7 @@ export class FinalizeComponent implements OnInit {
 
     agreed: boolean = false;
     showError: boolean = false;
+    _2Form: FinalizeForm;
 
     constructor( private _rentListService: RentListService,
                  private _menuService: MenuService,

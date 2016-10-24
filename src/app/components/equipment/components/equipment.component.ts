@@ -5,16 +5,6 @@ import { EquipmentListService,
          SearchService,
          ItemModel } from '../index';
 
-// import { 
-//          SingleItemComponent,
-//          AddItemComponent,
-//          ,
-//          
-//          ItemModel,
-//          SearchPipe } from '../index';
-
-
-
 @Component({
     selector: 'equipment',
     template: require('./equipment.component.html'),
