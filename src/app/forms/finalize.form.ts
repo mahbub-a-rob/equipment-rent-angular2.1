@@ -23,7 +23,10 @@ export class FinalizeForm {
     phone: AbstractControl;
     agreement: AbstractControl;
 
-    constructor( private _fb: FormBuilder, private _validator: ValidatorService ) {
+    constructor( 
+      private _fb: FormBuilder,
+      private _validator: ValidatorService
+     ) {
         this._buildForm(_fb);
      }
 

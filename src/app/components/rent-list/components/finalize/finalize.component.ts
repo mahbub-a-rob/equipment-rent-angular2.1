@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
 // } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { RentListService, MenuService } from '../../index';
-//
+import { RentListService, MenuService, FinalizeForm } from '../../index';
+
 
 @Component({
     selector: 'finalize',
@@ -19,7 +19,7 @@ export class FinalizeComponent implements OnInit {
 
     constructor( private _rentListService: RentListService,
                  private _menuService: MenuService,
-                //  private _form: FinalizeForm,
+                 private _form: FinalizeForm,
                  private _router : Router) { }
 
     ngOnInit() {

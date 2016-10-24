@@ -9,16 +9,18 @@ import { MenuService } from '../services/menu-service'
 import { ListViewComponent } from './list-view/list-view.component';
 import { FinalizeComponent } from './finalize/finalize.component';
 
+import { FinalizeForm, ValidatorService } from '../../../forms';
+
 
 @NgModule({
     imports: [
         SharedModule,
-        RentListRoutingModule
+        RentListRoutingModule,
     ],
     declarations: [ RentListComponent,
                     StatisticsComponent,
                     ListViewComponent,
                     FinalizeComponent ],
-    providers: [ MenuService ]
+    providers: [ MenuService, FinalizeForm, ValidatorService ]
 })
 export class RentListModule { }
