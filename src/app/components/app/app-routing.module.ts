@@ -1,8 +1,3 @@
-// import { StatisticsComponent,
-//          ListViewComponent,
-//          rentListRoutes } from '../rent-list';
-// import { rentListRoutes } from '../rent-list';
-
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

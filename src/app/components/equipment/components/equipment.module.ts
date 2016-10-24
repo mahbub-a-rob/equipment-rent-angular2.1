@@ -8,8 +8,6 @@ import { EquipmentComponent,
          AddItemComponent,
          AddFormComponent } from '../index';
 
-import { EquipmentListService } from '../../equipment/services/equipment-list.service';
-
 
 @NgModule({
     imports: [
@@ -20,8 +18,6 @@ import { EquipmentListService } from '../../equipment/services/equipment-list.se
                     SingleItemComponent,
                     AddItemComponent,
                     AddFormComponent ],
-    exports: [ EquipmentComponent ],
-    providers: [ EquipmentListService ],
-        // providers: [SearchService],
+    exports: [ EquipmentComponent ]
 })
 export class EquipmentModule { }

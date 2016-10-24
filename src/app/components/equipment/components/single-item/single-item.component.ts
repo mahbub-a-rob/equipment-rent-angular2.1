@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { EquipmentListService } from './../../services/equipment-list.service';
-import { CartService,
-         ItemModel} from '../../index';
+import { CartService } from '../../../cart';
+import { ItemModel} from '../../index';
 
 @Component({
     selector: 'single-item',
@@ -15,12 +15,11 @@ export class SingleItemComponent {
     @Input('singleItem') singleItem: ItemModel;
 
     constructor(private _router: Router,
-                private _cartService: CartService,
                 private _equipmentList: EquipmentListService) { }
 
     addToCart(rentedItem: ItemModel) {
-        this._cartService.collection.push(this.singleItem);
-        this._equipmentList.reduceFromCollection(this.singleItem);
+        this._equipmentList.addToCart(this.singleItem);
+        //this._cartService.collection.push(this.singleItem);
     }   
 
     goToDetails() {

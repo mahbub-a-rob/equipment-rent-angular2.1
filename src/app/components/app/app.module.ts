@@ -12,11 +12,12 @@ import { ItemDetailModule } from '../item-detail/item-detail.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { RentListService } from '../rent-list/';
 import { HttpRequestsService } from '../../services/';
+import { EquipmentListService } from '../equipment';
 import { CommunicationService } from '../../services/';
 import { SearchService } from '../search/';
 import { CartService } from '../cart/';
-import { RentListService } from '../rent-list/';
 
 @NgModule({
   imports: [
@@ -34,11 +35,12 @@ import { RentListService } from '../rent-list/';
     AppComponent
   ],
   providers: [
+    EquipmentListService,
     HttpRequestsService,
+    RentListService,
     CommunicationService,
     SearchService,
-    CartService,
-    RentListService
+    CartService
   ],
   bootstrap: [ AppComponent ]
 })

@@ -1,6 +1,8 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { HttpRequestsService } from '../../../services/http/http-requests.service';
+import { CartService } from '../../cart/services/cart.service';
+
 import { ItemModel } from '../index';
 
 import { Observable } from 'rxjs/Rx';
@@ -25,13 +27,14 @@ export class EquipmentListService {
 
     public collection: ItemModel[] = [];
 
-    constructor( private _httpRequestsService: HttpRequestsService ) {
-        this.getItems();
-        this.socket = io.connect('http://localhost:8080');
+    constructor( private _httpRequestsService: HttpRequestsService,
+                 private _cartService: CartService ) {
+                this.getItems();
+                this.socket = io.connect('http://localhost:8080');
 
-        this.socket.on('substraction', (item: ItemModel) => {
-            this.collection[item.id].limit--;
-        })
+                this.socket.on('substraction', (item: ItemModel) => {
+                    this.collection[item.id].limit--;
+                })
     }
 
     public getItems() {
@@ -49,10 +52,11 @@ export class EquipmentListService {
                               item => this.collection = this.collection.concat(item));
     }
 
-    public reduceFromCollection(singleItem: ItemModel) {
+    public addToCart(singleItem: ItemModel) {
         this._httpRequestsService.postToServer(singleItem, updateItemsUrl)
                     .subscribe(
                         (item) => {
+                            this._cartService.collection.push(this.singleItem);
                             this.collection[item.id].limit--;
                             this.socket.emit('substraction', item)
                         } )

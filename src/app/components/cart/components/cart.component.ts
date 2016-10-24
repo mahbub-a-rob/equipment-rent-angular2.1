@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { CartService } from '../services/cart.service';
 import { EquipmentListService } from '../../equipment/services/equipment-list.service';
-import { CartService,
-         RentListService,
-         ItemModel } from '../index';
+import { RentListService } from '../../rent-list';
+import { ItemModel } from '../../../models';
 
 @Component({
     selector: 'cart',

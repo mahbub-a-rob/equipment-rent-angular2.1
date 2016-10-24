@@ -1,7 +1,6 @@
+export { EquipmentListService } from './services/equipment-list.service';
 export { CommunicationService } from '../../services/';
-export { CartService } from '../cart';
 export { SearchService } from '../search';
-
 export { PipesModule } from './pipes';
 
 export { SingleItemComponent } from './components/single-item/single-item.component';

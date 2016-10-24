@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 
-import { ItemModel } from '../index';
+import { ItemModel } from '../../../models';
 
 import { Observable } from 'rxjs/Rx';
 import { Subscriber } from 'rxjs/Subscriber';
 
 import { HttpRequestsService } from './../../../services/http/http-requests.service';
-import { EquipmentListService } from '../../equipment/services/equipment-list.service';
 
 
 const itemsUrl: string = '/app/items';
@@ -19,8 +18,7 @@ export class CartService {
     public itemsUrl: string = '/app/items/cart';
 
     constructor(
-        private _httpRequestsService: HttpRequestsService,
-        private _equipmentListService: EquipmentListService
+        private _httpRequestsService: HttpRequestsService
         ) {
         this.getItems();
     }
