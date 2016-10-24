@@ -32,14 +32,12 @@ export class CartComponent implements OnInit {
     }
 
     rentAll(cart: ItemModel[]) {
-        this._rentListService.addToCollection(cart);
-        this._cartService.collection = [];
+        this._cartService.rentAll(cart);
         this.selectedItem = undefined;
     }
 
     deleteFromCollection(itemNum: number) {
-        let deletedId = this._cartService.collection[itemNum].id;
-        this._cartService.collection.splice(itemNum, 1);
-        this._equipmentListService.collection[deletedId].limit++;
+        this._cartService.deleteSingleItem(itemNum);
+        this._equipmentListService.collection[itemNum].limit++;
     }
 }

@@ -16,6 +16,16 @@ router.route('/app/items/cart')
         .get((req, res) => {
             res.send(cartItems);
         })
+        .post((req, res) => {
+            cartItems = [];
+            res.send([]);
+        })
+
+router.route('/app/items/cart/reduce')
+        .post((req, res) => {
+            let deletedItem = cartItems.splice(req.id, 1);
+            res.send(deletedItem[0]);
+        })
 
 router.route('/app/items/update')
         .post((req, res) => {
