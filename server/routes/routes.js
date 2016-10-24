@@ -5,6 +5,7 @@ var router = express.Router();
 var path = require('path');
 
 var items = require('../../src/assets/data/items');
+var cartItems = require('../../src/assets/data/cartItems');
 
 router.route('/app/items')
         .get((req, res) => {
@@ -17,8 +18,7 @@ router.route('/app/items')
 
 router.route('/app/items/cart')
         .get((req, res) => {
-            res.send([{id: 0, name: 'Rope', limit: 7},
-                      {id: 0, name: 'Rope', limit: 7}]);
+            res.send(cartItems);
         })
 
 router.route('/app/items/update')
