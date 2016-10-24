@@ -15,7 +15,7 @@ export class HttpRequestsService {
 
     constructor(private _http: Http) { }
 
-    public getItemsFromServer() {
+    public getItemsFromServer(itemsUrl: string) {
         let options = new RequestOptions({ url: `${host}${itemsUrl}` });
         return this._http.get(itemsUrl, options)
                          .map(this.extractData)
@@ -23,17 +23,6 @@ export class HttpRequestsService {
     }
 
     public postToServer(newItemName: ItemModel, endpoint: string) {
-        let body = JSON.stringify(newItemName);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-        options.url = `${host}${endpoint}`;
-
-        return this._http.post(itemsUrl, body, options)
-                         .map(this.extractData)
-                         .catch(this.handleError);
-    }
-
-    public updateLimit(newItemName: ItemModel, endpoint: string) {
         let body = JSON.stringify(newItemName);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });

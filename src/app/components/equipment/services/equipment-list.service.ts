@@ -20,7 +20,7 @@ export class EquipmentListService {
     formActivated: boolean;
     errorMessage: string;
     singleItem: ItemModel;
-    oneItem: ItemModel;
+    itemsUrl: string = '/app/items';
     
     public socket:any = null;
 
@@ -36,18 +36,11 @@ export class EquipmentListService {
     }
 
     public getItems() {
-        this._httpRequestsService.getItemsFromServer()
+        this._httpRequestsService.getItemsFromServer(itemsUrl)
                           .subscribe(
                             (items) => {
                                 this.collection = items;
                             },
-                            error =>  this.errorMessage = <any>error);
-    }
-
-    public getOneItem(id: number) {
-        this._httpRequestsService.getItemsFromServer()
-                          .subscribe(
-                            items => this.oneItem = items[id],
                             error =>  this.errorMessage = <any>error);
     }
 
@@ -58,7 +51,7 @@ export class EquipmentListService {
     }
 
     public reduceFromCollection(singleItem: ItemModel) {
-        this._httpRequestsService.updateLimit(singleItem, updateItemsUrl)
+        this._httpRequestsService.postToServer(singleItem, updateItemsUrl)
                     .subscribe(
                         (item) => {
                             this.collection[item.id].limit--;
