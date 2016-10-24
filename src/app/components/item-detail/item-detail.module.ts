@@ -4,7 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { ItemDetailComponent } from './item-detail.component';
 
-import { EquipmentListService } from '../equipment';
+import { EquipmentListService } from '../equipment/services/equipment-list.service';
 import { HttpRequestsService } from '../../services';
 
 

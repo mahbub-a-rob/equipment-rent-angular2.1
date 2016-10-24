@@ -15,6 +15,12 @@ router.route('/app/items')
             res.send(req.body);
         });
 
+router.route('/app/items/cart')
+        .get((req, res) => {
+            res.send([{id: 0, name: 'Rope', limit: 7},
+                      {id: 0, name: 'Rope', limit: 7}]);
+        })
+
 router.route('/app/items/update')
         .post((req, res) => {
             items[req.body.id].limit--;

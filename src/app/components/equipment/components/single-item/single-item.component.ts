@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { Router } from '@angular/router';
 
+import { EquipmentListService } from './../../services/equipment-list.service';
 import { CartService,
-         EquipmentListService,
          ItemModel} from '../../index';
 
 @Component({

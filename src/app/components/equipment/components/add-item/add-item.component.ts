@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 
 import { AddFormComponent } from '../add-form/add-form.component';
 
-import { EquipmentListService,
-         ItemModel} from '../../index';
+import { EquipmentListService } from '../../../equipment/services/equipment-list.service';
+import { ItemModel} from '../../index';
 
 @Component({
     selector: 'add-item',

@@ -8,7 +8,7 @@ import { EquipmentComponent,
          AddItemComponent,
          AddFormComponent } from '../index';
 
-import { EquipmentListService } from '../index';
+import { EquipmentListService } from '../../equipment/services/equipment-list.service';
 
 
 @NgModule({

@@ -1,19 +1,9 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
-import { EquipmentListService,
-         CommunicationService,
+import { EquipmentListService } from '../services/equipment-list.service';
+import { CommunicationService,
          SearchService,
          ItemModel } from '../index';
-
-// import { 
-//          SingleItemComponent,
-//          AddItemComponent,
-//          ,
-//          
-//          ItemModel,
-//          SearchPipe } from '../index';
-
-
 
 @Component({
     selector: 'equipment',

@@ -16,6 +16,8 @@
 
     <div class="rent-list__items" *ngFor="let rented of _cartService.collection; let i = index">
         <span class="delete-cross" (click)="deleteFromCollection(i)">X</span>        
-        <span class="cart-item">{{rented.name}}</span>
+        <span class="cart-item" (ngModel)="_equipmentListService.collection[rented.id].name">
+            {{_equipmentListService.collection[rented.id].name}}
+        </span>
     </div>
 </div>

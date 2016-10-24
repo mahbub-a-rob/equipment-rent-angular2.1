@@ -16,13 +16,6 @@ import { SearchService } from '../search';
   template: require('./app.component.html'),
   styles: [ require('./app.component.scss') ],
   encapsulation: ViewEncapsulation.None
-  // directives: [
-  //              CartComponent,
-  //              
-  //              ],
-  // providers: [ CartService,
-  //              RentListService,
-  //              ValidatorService ]
 })
 
 export class AppComponent {

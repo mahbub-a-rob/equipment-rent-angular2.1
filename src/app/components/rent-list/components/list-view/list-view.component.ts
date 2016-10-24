@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { EquipmentListService,
-         RentListService,
+import { EquipmentListService } from '../../../equipment/services/equipment-list.service';
+import { RentListService,
          MenuService,
          ItemModel } from '../../index';
 

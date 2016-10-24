@@ -1,6 +1,6 @@
 export { RentListService } from './services/rent-list.service';
 export { MenuService } from './services/menu-service';
-export { EquipmentListService } from '../equipment';
+export { EquipmentListService } from '../equipment/services/equipment-list.service';
 export { FinalizeForm } from '../../forms';
 export { RentListComponent } from './components/rent-list.component';
 export { StatisticsComponent } from './components/statistics/statistics.component';

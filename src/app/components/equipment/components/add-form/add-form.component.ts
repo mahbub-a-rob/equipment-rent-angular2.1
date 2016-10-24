@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { EquipmentListService,
-         ItemModel } from '../../index';
+import { EquipmentListService } from '../../../equipment/services/equipment-list.service';
+import { ItemModel } from '../../index';
 
 @Component({
     selector: 'add-form',

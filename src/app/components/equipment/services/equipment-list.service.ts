@@ -20,7 +20,6 @@ export class EquipmentListService {
     formActivated: boolean;
     errorMessage: string;
     singleItem: ItemModel;
-    itemsUrl: string = '/app/items';
     
     public socket:any = null;
 
