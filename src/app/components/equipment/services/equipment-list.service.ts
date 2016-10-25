@@ -31,15 +31,13 @@ export class EquipmentListService {
                  private _cartService: CartService,
                  private _socketIoService: SocketIoService ) {
                 this.getItems();
-                this.socket = io.connect('http://localhost:8080');
 
-                this.socket.on('substraction', (item: ItemModel) => {
+                this._socketIoService.socket.on('substraction', (item: ItemModel) => {
                     this.collection[item.id].limit--;
                 })
 
-                this.socket.on('addToItemLimit', (item: ItemModel) => {
+                this._socketIoService.socket.on('addToItemLimit', (item: ItemModel) => {
                     this.collection[item.id].limit++;
-                    console.log('got request from addToItemLimit');
                 })
     }
 
@@ -64,7 +62,7 @@ export class EquipmentListService {
                         (item) => {
                             this._cartService.collection.push(item);
                             this.collection[item.id].limit--;
-                            this.socket.emit('substraction', item);
+                            this._socketIoService.socket.emit('substraction', item);
                         } )
     }
 }
