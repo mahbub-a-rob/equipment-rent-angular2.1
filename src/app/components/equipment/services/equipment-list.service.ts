@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { HttpRequestsService } from '../../../services/http/http-requests.service';
+import { HttpRequestsService, SocketIoService } from '../../../services';
 import { CartService } from '../../cart/services/cart.service';
 
 import { ItemModel } from '../index';
@@ -28,7 +28,8 @@ export class EquipmentListService {
     public collection: ItemModel[] = [];
 
     constructor( private _httpRequestsService: HttpRequestsService,
-                 private _cartService: CartService ) {
+                 private _cartService: CartService,
+                 private _socketIoService: SocketIoService ) {
                 this.getItems();
                 this.socket = io.connect('http://localhost:8080');
 

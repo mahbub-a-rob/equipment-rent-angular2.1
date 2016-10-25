@@ -16,6 +16,7 @@ import { RentListService } from '../rent-list/';
 import { HttpRequestsService } from '../../services/';
 import { EquipmentListService } from '../equipment';
 import { CommunicationService } from '../../services/';
+import { SocketIoService } from '../../services';
 import { SearchService } from '../search/';
 import { CartService } from '../cart/';
 
@@ -37,6 +38,7 @@ import { CartService } from '../cart/';
   providers: [
     EquipmentListService,
     HttpRequestsService,
+    SocketIoService,
     RentListService,
     CommunicationService,
     SearchService,
