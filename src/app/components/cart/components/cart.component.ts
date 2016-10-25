@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { CartService } from '../services/cart.service';
@@ -12,7 +12,7 @@ import { ItemModel } from '../../../models';
     styles: [ require('./cart.component.scss') ]
 })
 
-export class CartComponent implements OnInit {
+export class CartComponent {
 
     rentAllTriggered: Boolean = false;
 
@@ -23,21 +23,19 @@ export class CartComponent implements OnInit {
                   private _rentListService: RentListService,
                   private _cartService: CartService ) { }
 
-    ngOnInit() {
-        this._cartService.getItems();
-    }
-
     goToDetails() {
         this._router.navigate(['/item-detail', this.selectedItem.id]);
     }
 
     rentAll(cart: ItemModel[]) {
-        this._cartService.rentAll(cart);
+        this._rentListService.addToCollection(cart);
+        this._cartService.collection = [];
         this.selectedItem = undefined;
     }
 
-    deleteFromCollection(itemNum: number) {
-        this._cartService.deleteSingleItem(itemNum);
-        this._equipmentListService.collection[itemNum].limit++;
+    deleteFromCollection(item: ItemModel, itemNum: number) {
+        let deletedId = this._cartService.collection[itemNum].id;
+        this._cartService.deleteFromCart(item, itemNum);
+        this._equipmentListService.collection[item.id].limit++;
     }
 }

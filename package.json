@@ -7,7 +7,7 @@
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "postinstall": "typings install",
-    "prod": "nodemon server/server.js"
+    "server": "nodemon server/server.js"
   },
   "licenses": [
     {

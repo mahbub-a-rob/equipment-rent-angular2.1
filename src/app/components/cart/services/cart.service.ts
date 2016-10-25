@@ -15,38 +15,16 @@ export class CartService {
 
     errorMessage: string;
     public collection: ItemModel[] = [];
-    public itemsUrl: string = '/app/items/cart';
-    public deleteItemUrl: string = '/app/items/cart/reduce';
+    public deleteItemUrl: string = '/app/items/reduce';
 
     constructor(
         private _httpRequestsService: HttpRequestsService) {  }
 
-    public getItems() {
-        this._httpRequestsService.getItemsFromServer(this.itemsUrl)
-                          .subscribe(
-                            (items) => {
-                                items.forEach((element: ItemModel) => {
-                                    this.collection.push(element);
-                                });
-                            },
-                            error =>  this.errorMessage = <any>error);
-    }
-
-    public rentAll(cart: ItemModel[]) {
-        this._httpRequestsService.rentAll(cart, itemsUrl)
-                            .subscribe(
-                                response => {
-                                    this.collection = response;
-                                },
-                                error => this.errorMessage = <any>error);
-    }
-
-    public deleteSingleItem(deletedId: number){
-        this._httpRequestsService.deleteSingle({id: deletedId}, this.deleteItemUrl)
-                            .subscribe(
-                                response => {
-                                    this.collection.splice(response.id, 1);
-                                },
-                                error => this.errorMessage = <any>error);
+    public deleteFromCart(singleItem: ItemModel, itemNum: number) {
+        this._httpRequestsService.postToServer(singleItem, this.deleteItemUrl)
+            .subscribe(
+            (item) => {
+                this.collection.splice(itemNum, 1);
+            })
     }
 }

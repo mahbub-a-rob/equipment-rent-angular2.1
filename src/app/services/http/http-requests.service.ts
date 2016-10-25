@@ -32,28 +32,6 @@ export class HttpRequestsService {
                          .map(this.extractData)
                          .catch(this.handleError);
     }
-    
-    public rentAll(ItemName: ItemModel[], endpoint: string) {
-        let body = JSON.stringify(ItemName);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-        options.url = `${host}${endpoint}`;
-
-        return this._http.post(itemsUrl, body, options)
-                         .map(this.extractData)
-                         .catch(this.handleError);
-    }
-
-    public deleteSingle(ItemName: {id: number}, endpoint: string) {
-        let body = JSON.stringify(ItemName);
-        let headers = new Headers({ 'Content-Type': 'application/json'});
-        let options = new RequestOptions({ headers: headers });
-        options.url = `${host}${endpoint}`;
-
-        return this._http.post(itemsUrl, body, options)
-                         .map(this.extractData)
-                         .catch(this.handleError);
-    }
 
     private extractData(res: Response) {
         let body = res.json();
