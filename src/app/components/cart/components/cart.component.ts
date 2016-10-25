@@ -36,6 +36,6 @@ export class CartComponent {
     deleteFromCollection(item: ItemModel, itemNum: number) {
         let deletedId = this._cartService.collection[itemNum].id;
         this._cartService.deleteFromCart(item, itemNum);
-        this._equipmentListService.collection[item.id].limit++;
+        this._equipmentListService.collection[deletedId].limit++;
     }
 }

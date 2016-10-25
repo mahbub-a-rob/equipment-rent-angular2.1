@@ -35,6 +35,11 @@ export class EquipmentListService {
                 this.socket.on('substraction', (item: ItemModel) => {
                     this.collection[item.id].limit--;
                 })
+
+                this.socket.on('addToItemLimit', (item: ItemModel) => {
+                    this.collection[item.id].limit++;
+                    console.log('got request from addToItemLimit');
+                })
     }
 
     public getItems() {
@@ -58,7 +63,7 @@ export class EquipmentListService {
                         (item) => {
                             this._cartService.collection.push(item);
                             this.collection[item.id].limit--;
-                            this.socket.emit('substraction', item)
+                            this.socket.emit('substraction', item);
                         } )
     }
 }
