@@ -1,9 +1,11 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var extractCSS = new ExtractTextPlugin('[name].[hash].css');
 var helpers = require('./helpers');
 var path = require('path');
 var autoprefixer = require('autoprefixer');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -35,7 +37,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract('style', 'raw!postcss!sass')
+        loader: extractCSS.extract(['css','sass']),
       },
       {
         test: /\.scss$/,
@@ -45,12 +47,14 @@ module.exports = {
   },
 
   plugins: [
+    extractCSS,
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),
 
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+    new CopyWebpackPlugin([{ from: 'src/assets/imgs', to: 'assets/imgs' }], {})
   ]
 };
