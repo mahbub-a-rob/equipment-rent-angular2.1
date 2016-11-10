@@ -5,7 +5,6 @@ var extractCSS = new ExtractTextPlugin('[name].[hash].css');
 var helpers = require('./helpers');
 var path = require('path');
 var autoprefixer = require('autoprefixer');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -54,7 +53,6 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    }),
-    new CopyWebpackPlugin([{ from: 'src/assets/imgs', to: 'assets/imgs' }], {})
+    })
   ]
 };
