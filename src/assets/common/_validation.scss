@@ -1,16 +1,16 @@
-.ng-valid, .ng-invalid.ng-dirty{
+.ng-valid:not(form), .ng-invalid.ng-dirty:not(form){
   border: 0;
 }
 
-.ng-pristine {
+.ng-pristine:not(form) {
   border-left: 5px solid $colorGrey02;
 }
 
-.ng-valid {
+.ng-valid:not(form) {
   border-left: 5px solid $colorGreen03;
 }
 
-.ng-invalid.ng-dirty {
+.ng-invalid.ng-dirty:not(form) {
   border-left: 5px solid $colorRed03;
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { EquipmentListService } from '../../../equipment/services/equipment-list.service';
 import { ItemModel } from '../../index';
@@ -7,6 +7,7 @@ import { ItemModel } from '../../index';
     selector: 'add-form',
     template: require('./add-form.component.html'),
     styles: [ require('./add-form.component.scss')],
+    encapsulation: ViewEncapsulation.Native
 })
 export class AddFormComponent {
 
