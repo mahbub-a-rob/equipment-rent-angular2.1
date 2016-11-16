@@ -1,5 +1,5 @@
 # equipment-rent-angular2.0
-Training application for Angular2, Webpack, Node, Socket.io, Redis
+Training application for Angular2, Webpack, Node, Socket.io, Redis (soon)
 <br/><br/>
 To run this app:<br/>
 1. Clone the repository<br/>
