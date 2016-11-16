@@ -1,7 +1,7 @@
 {
   "name": "Equipment-rent-Angular2.1",
   "version": "1.0.0",
-  "description": "Training application for Angular2, Webpack, Node, Socket.io, Redis",
+  "description": "Training application for Angular2, Webpack, Node, Socket.io, Redis (soon)",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 4001",
     "test": "karma start",
