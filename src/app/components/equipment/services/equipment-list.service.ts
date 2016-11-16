@@ -60,7 +60,8 @@ export class EquipmentListService {
         this._httpRequestsService.postToServer(singleItem, updateItemsUrl)
                     .subscribe(
                         (item) => {
-                            this._cartService.collection.push(item);
+                            console.log('equipment list service resp:', item);
+                            this._cartService.collection.push(singleItem);
                             this.collection[item.id].limit--;
                             this._socketIoService.socket.emit('substraction', item);
                         } )
