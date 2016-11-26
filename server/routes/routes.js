@@ -8,19 +8,22 @@ var items = require('../../src/assets/data/items');
 
 router.route('/app/items')
         .get((req, res) => {
-            res.send(items);
+            res.send(items)
         })
+        .put((req, res) => {
+            let query = req.query.action;
 
-router.route('/app/items/update')
-        .post((req, res) => {
-            items[req.body.id].limit--;
-            res.send(items[req.body.id]);
-        });
+            switch(query) {
+                case 'update':
+                    items[req.body.id].limit--;
+                    res.send(items[req.body.id]);
+                    break;
+                case 'reduce':
+                    items[req.body.id].limit++;
+                    res.send(items[req.body.id]);
+                    break
+            }
 
-router.route('/app/items/reduce')
-        .post((req, res) => {
-            items[req.body.id].limit++;
-            res.send(items[req.body.id]);
-        });
+        })
 
 module.exports = router;

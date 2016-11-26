@@ -20,8 +20,8 @@ export class CartService {
         private _httpRequestsService: HttpRequestsService,
         private _socketIoService: SocketIoService ) { }
 
-    public deleteFromCart(singleItem: ItemModel, itemNum: number) {
-        this._httpRequestsService.postToServer(singleItem, this.deleteItemUrl)
+    public deleteFromCart(singleItem: ItemModel, itemNum: number, queryString: string) {
+        this._httpRequestsService.postToServer(singleItem, queryString)
             .subscribe(
             (item) => {
                 this.collection.splice(itemNum, 1);

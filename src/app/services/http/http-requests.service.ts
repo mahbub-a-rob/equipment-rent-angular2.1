@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import { ItemModel } from '../../models';
 
 import { Observable } from 'rxjs/Rx';
 
-const host: string = 'http://localhost:8080'
+const host: string = 'http://localhost:8080';
 const itemsUrl: string = '/app/items';
 
 @Injectable()
@@ -15,20 +15,21 @@ export class HttpRequestsService {
 
     constructor(private _http: Http) { }
 
-    public getItemsFromServer(itemsUrl: string) {
+    public getItemsFromServer() {
         let options = new RequestOptions({ url: `${host}${itemsUrl}` });
         return this._http.get(itemsUrl, options)
                          .map(this.extractData)
                          .catch(this.handleError);
     }
 
-    public postToServer(ItemName: ItemModel, endpoint: string) {
+    public postToServer(ItemName: ItemModel, searchParams: string) {
         let body = JSON.stringify(ItemName);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        options.url = `${host}${endpoint}`;
+        options.url = `${host}${itemsUrl}`;
+        options.search = new URLSearchParams(searchParams);
 
-        return this._http.post(itemsUrl, body, options)
+        return this._http.put(itemsUrl, body, options)
                          .map(this.extractData)
                          .catch(this.handleError);
     }

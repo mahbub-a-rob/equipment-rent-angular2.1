@@ -13,9 +13,6 @@ import 'rxjs/add/operator/map';
 
 let io = require('../../../../../node_modules/socket.io-client/socket.io.js');
 
-const itemsUrl: string = '/app/items';
-const updateItemsUrl: string = '/app/items/update';
-
 @Injectable()
 export class EquipmentListService {
 
@@ -42,7 +39,7 @@ export class EquipmentListService {
     }
 
     public getItems() {
-        this._httpRequestsService.getItemsFromServer(itemsUrl)
+        this._httpRequestsService.getItemsFromServer()
                           .subscribe(
                             (items) => {
                                 this.collection = items;
@@ -51,19 +48,20 @@ export class EquipmentListService {
     }
 
     public addToCollection(newItemName: ItemModel) {
-        this._httpRequestsService.postToServer(newItemName, itemsUrl)
+        let searchParams = 'action=update';
+        this._httpRequestsService.postToServer(newItemName, searchParams)
                           .subscribe(
                               item => this.collection = this.collection.concat(item));
     }
 
     public addToCart(singleItem: ItemModel) {
-        this._httpRequestsService.postToServer(singleItem, updateItemsUrl)
+        let searchParams = 'action=reduce';
+        this._httpRequestsService.postToServer(singleItem, searchParams)
                     .subscribe(
                         (item) => {
-                            console.log('equipment list service resp:', item);
                             this._cartService.collection.push(singleItem);
                             this.collection[item.id].limit--;
                             this._socketIoService.socket.emit('substraction', item);
-                        } )
+                        })
     }
 }

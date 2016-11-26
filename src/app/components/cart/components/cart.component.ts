@@ -34,8 +34,9 @@ export class CartComponent {
     }
 
     deleteFromCollection(item: ItemModel, itemNum: number) {
+        let queryString = 'action=reduce'
         let deletedId = this._cartService.collection[itemNum].id;
-        this._cartService.deleteFromCart(item, itemNum);
+        this._cartService.deleteFromCart(item, itemNum, queryString);
         this._equipmentListService.collection[deletedId].limit++;
     }
 }
