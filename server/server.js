@@ -14,14 +14,9 @@ var mwAllowCors = require('./middlewares/mwAllowCors');
 var routes = require('./routes/routes');
 var ioConnection = require('./sockets/ioConnection');
 
+// Middleware execution
 app.use(express.static('dist'));
 app.set('dist', path.join(__dirname, 'dist'));
-// Middleware execution
-// app.use('/', express.static('dist'));
-// app.use('/equipment', express.static('dist'));
-// app.use('/rent-list', express.static('dist'));
-// app.use('/item-detail/:id', express.static('dist'));
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(mwAllowCors);

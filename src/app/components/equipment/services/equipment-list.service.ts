@@ -55,7 +55,7 @@ export class EquipmentListService {
     }
 
     public addToCart(singleItem: ItemModel) {
-        let searchParams = 'action=reduce';
+        let searchParams = 'action=update';
         this._httpRequestsService.putToServer(singleItem, searchParams)
                     .subscribe(
                         (item) => {
