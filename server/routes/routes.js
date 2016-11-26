@@ -25,5 +25,9 @@ router.route('/app/items')
             }
 
         })
+        .post((req, res) => {
+            items.push(req.body);
+            res.send(req.body);
+        })
 
 module.exports = router;

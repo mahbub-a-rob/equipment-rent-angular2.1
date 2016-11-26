@@ -47,8 +47,8 @@ export class EquipmentListService {
                             error =>  this.errorMessage = <any>error);
     }
 
-    public addToCollection(newItemName: ItemModel) {
-        let searchParams = 'action=update';
+    public addToCollection(newItemName: ItemModel, action: string) {
+        let searchParams = `action=${action}`;
         this._httpRequestsService.postToServer(newItemName, searchParams)
                           .subscribe(
                               item => this.collection = this.collection.concat(item));
@@ -56,7 +56,7 @@ export class EquipmentListService {
 
     public addToCart(singleItem: ItemModel) {
         let searchParams = 'action=reduce';
-        this._httpRequestsService.postToServer(singleItem, searchParams)
+        this._httpRequestsService.putToServer(singleItem, searchParams)
                     .subscribe(
                         (item) => {
                             this._cartService.collection.push(singleItem);

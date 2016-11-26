@@ -17,22 +17,40 @@ export class HttpRequestsService {
 
     public getItemsFromServer() {
         let options = new RequestOptions({ url: `${host}${itemsUrl}` });
-        return this._http.get(itemsUrl, options)
-                         .map(this.extractData)
-                         .catch(this.handleError);
+        return this.httpDataActions(
+               this._http.get(itemsUrl, options));
+    }
+
+    public putToServer(ItemName: ItemModel, searchParams: string) {
+        let params = this.setParameters(ItemName, searchParams)
+        return this.httpDataActions(
+               this._http.put(itemsUrl, params.body, params.options))
     }
 
     public postToServer(ItemName: ItemModel, searchParams: string) {
+        let params = this.setParameters(ItemName, searchParams);
+        return this.httpDataActions(
+               this._http.post(itemsUrl, params.body, params.options))
+    }
+
+    private setParameters(ItemName: ItemModel, searchParams: string) {
         let body = JSON.stringify(ItemName);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
         options.url = `${host}${itemsUrl}`;
         options.search = new URLSearchParams(searchParams);
 
-        return this._http.put(itemsUrl, body, options)
-                         .map(this.extractData)
-                         .catch(this.handleError);
+        return {
+            body: body,
+            options: options
+        }
     }
+
+    private httpDataActions(response: Observable<Response>) {
+        return response.map(this.extractData)
+                       .catch(this.handleError);
+    }
+
 
     private extractData(res: Response) {
         let body = res.json();

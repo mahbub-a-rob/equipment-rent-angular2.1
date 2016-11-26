@@ -17,7 +17,8 @@ export class AddFormComponent {
     onSubmit(newItemName: string) {
         let newId = this._equipmentList.collection.length;
         let newItem = new ItemModel(newId, newItemName, 1);
-        this._equipmentList.addToCollection(newItem);
+        let action = 'addNew'
+        this._equipmentList.addToCollection(newItem, action);
         this._equipmentList.formActivated = !this._equipmentList.formActivated;
     }
 }
